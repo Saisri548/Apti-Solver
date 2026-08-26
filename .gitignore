@@ -1,0 +1,10 @@
+# Environment variables
+*.env
+.env
+
+# Google Cloud service account credentials
+*.gcp-service-account-json
+*.json
+
+# Node dependencies
+node_modules/
