@@ -44,6 +44,19 @@ async function listQuantFiles() {
 }
 
 /**
+ * Get all Markdown files inside english/
+ */
+async function listEnglishFiles() {
+  const [files] = await bucket.getFiles({
+    prefix: "English/",
+  });
+
+  return files
+    .filter((file) => file.name.endsWith(".md"))
+    .map((file) => file.name);
+}
+
+/**
  * Get the content of a file from GCS
  */
 async function getFileContent(filePath) {
@@ -58,5 +71,6 @@ export {
   storage,
   bucket,
   listQuantFiles,
+  listEnglishFiles,
   getFileContent,
 };
